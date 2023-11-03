@@ -14,13 +14,13 @@ const resolvers = {
             return db.games
         },
         // query variables
-        game(_, args){
+        game(_, args) {
             return db.games.find(game => game.id === args.id)
         },
         authors() {
             return db.authors
         },
-        author(_, args){
+        author(_, args) {
             return db.authors.find(author => author.id === args.id)
         },
         reviews() {
@@ -66,7 +66,6 @@ const resolvers = {
                 if(g.id === args.id){
                     return {...g, ...args.edits}
                 }
-
                 return g
             })
             return db.games.find(g => g.id === args.id)
